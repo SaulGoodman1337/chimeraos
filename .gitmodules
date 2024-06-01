@@ -1,6 +1,7 @@
 [submodule "aur-pkgs/lact-git"]
 	path = aur-pkgs/lact-git
 	url = https://aur.archlinux.org/lact-git
+<<<<<<< HEAD
 [submodule "aur-pkgs/ayaled"]
 	path = aur-pkgs/ayaled
 	url = https://aur.archlinux.org/ayaled.git
@@ -130,3 +131,5 @@
 [submodule "aur-pkgs/bmi160-aya-neo-dkms-git"]
 	path = aur-pkgs/bmi160-aya-neo-dkms-git
 	url = https://aur.archlinux.org/bmi160-aya-neo-dkms-git
+=======
+>>>>>>> eb57ebb (- add lact)
