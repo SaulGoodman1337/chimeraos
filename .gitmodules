@@ -1,0 +1,3 @@
+[submodule "aur-pkgs/lact-git"]
+	path = aur-pkgs/lact-git
+	url = https://aur.archlinux.org/lact-git
