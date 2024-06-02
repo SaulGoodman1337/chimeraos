@@ -1,15 +1,6 @@
 [submodule "aur-pkgs/lact-git"]
 	path = aur-pkgs/lact-git
 	url = https://aur.archlinux.org/lact-git
-[submodule "aur-pkgs/ayaled"]
-	path = aur-pkgs/ayaled
-	url = https://aur.archlinux.org/ayaled.git
-[submodule "aur-pkgs/ayn-platform-dkms-git"]
-	path = aur-pkgs/ayn-platform-dkms-git
-	url = https://aur.archlinux.org/ayn-platform-dkms-git.git
-[submodule "aur-pkgs/bcm20702a1-firmware"]
-	path = aur-pkgs/bcm20702a1-firmware
-	url = https://aur.archlinux.org/bcm20702a1-firmware.git
 [submodule "aur-pkgs/boxtron"]
 	path = aur-pkgs/boxtron
 	url = https://aur.archlinux.org/boxtron.git
@@ -70,12 +61,6 @@
 [submodule "aur-pkgs/nintendo-udev"]
 	path = aur-pkgs/nintendo-udev
 	url = https://aur.archlinux.org/nintendo-udev.git
-[submodule "aur-pkgs/opengamepadui-bin"]
-	path = aur-pkgs/opengamepadui-bin
-	url = https://aur.archlinux.org/opengamepadui-bin.git
-[submodule "aur-pkgs/opengamepadui-session-git"]
-	path = aur-pkgs/opengamepadui-session-git
-	url = https://aur.archlinux.org/opengamepadui-session-git.git
 [submodule "aur-pkgs/pikaur"]
 	path = aur-pkgs/pikaur
 	url = https://aur.archlinux.org/pikaur.git
@@ -85,27 +70,9 @@
 [submodule "aur-pkgs/python-vdf"]
 	path = aur-pkgs/python-vdf
 	url = https://aur.archlinux.org/python-vdf.git
-[submodule "aur-pkgs/r8152-dkms"]
-	path = aur-pkgs/r8152-dkms
-	url = https://aur.archlinux.org/r8152-dkms.git
-[submodule "aur-pkgs/r8168-dkms"]
-	path = aur-pkgs/r8168-dkms
-	url = https://aur.archlinux.org/r8168-dkms.git
 [submodule "aur-pkgs/retroarch-autoconfig-udev-git"]
 	path = aur-pkgs/retroarch-autoconfig-udev-git
 	url = https://aur.archlinux.org/retroarch-autoconfig-udev-git.git
-[submodule "aur-pkgs/rtl8812au-dkms-git"]
-	path = aur-pkgs/rtl8812au-dkms-git
-	url = https://aur.archlinux.org/rtl8812au-dkms-git.git
-[submodule "aur-pkgs/rtl8814au-dkms-git"]
-	path = aur-pkgs/rtl8814au-dkms-git
-	url = https://aur.archlinux.org/rtl8814au-dkms-git.git
-[submodule "aur-pkgs/rtl88x2bu-dkms-git"]
-	path = aur-pkgs/rtl88x2bu-dkms-git
-	url = https://aur.archlinux.org/rtl88x2bu-dkms-git.git
-[submodule "aur-pkgs/rtl8821au-dkms-git"]
-	path = aur-pkgs/rtl8821au-dkms-git
-	url = https://aur.archlinux.org/rtl8821au-dkms-git.git
 [submodule "aur-pkgs/ryzenadj-git"]
 	path = aur-pkgs/ryzenadj-git
 	url = https://aur.archlinux.org/ryzenadj-git.git

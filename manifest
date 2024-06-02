@@ -179,11 +179,6 @@ export PACKAGE_OVERRIDES="\
 # Which is often the same as the package name but it can be different.
 # Check on the AUR webpage if you are unsure
 export AUR_PACKAGES="\
-	ayaneo-platform-dkms-git \
-	ayn-platform-dkms-git \
-	bcm20702a1-firmware \
-	bmi160-aya-neo-dkms-git \
-	bmi260-dkms \
 	boxtron \
 	chimera \
 	chimeraos-device-quirks-git \
@@ -204,18 +199,10 @@ export AUR_PACKAGES="\
 	libretro-virtualjaguar-git \
 	kanit-font \
 	nintendo-udev \
-	opengamepadui-bin \
-	opengamepadui-session-git \
 	pikaur \
 	powerstation-bin \
 	python-vdf \
-	r8152-dkms \
-	r8168-dkms \
 	retroarch-autoconfig-udev-git \
-	rtl8812au-dkms-git \
-	rtl8814au-dkms-git \
-	rtl88x2bu-dkms-git \
-	rtl8821au-dkms-git \
 	ryzenadj-git \
 	steam_notif_daemon \
 	steam-removable-media-git \
