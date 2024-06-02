@@ -254,6 +254,7 @@ export SERVICES="\
 	sshd \
 	systemd-timesyncd \
 	swapfile \
+	lactd \
 "
 
 export USER_SERVICES="\
