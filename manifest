@@ -67,6 +67,7 @@ export PACKAGES="\
 	intel-ucode \
 	intel-undervolt \
 	less \
+	lm_sensors \
 	lib32-curl \
 	lib32-fontconfig \
 	lib32-freetype2 \
@@ -195,11 +196,7 @@ export PACKAGE_OVERRIDES="\
 # Which is often the same as the package name but it can be different.
 # Check on the AUR webpage if you are unsure
 export AUR_PACKAGES="\
-	asusctl \
 	antimicrox \
-	ayaneo-platform-dkms-git \
-	ayn-platform-dkms-git \
-	bcm20702a1-firmware \
 	boxtron \
 	chimera \
 	chimeraos-device-quirks-git \
@@ -212,24 +209,12 @@ export AUR_PACKAGES="\
 	inputplumber-bin \
 	legendary \
 	lib32-gamescope-plus \
-	libretro-dosbox-pure-git \
-	libretro-opera-git \
-	libretro-prosystem-git \
-	libretro-stella2014-git \
-	libretro-virtualjaguar-git \
-	linux-firmware-valve \
 	kanit-font \
 	nintendo-udev \
-	opengamepadui-bin \
-	opengamepadui-session-git \
 	pikaur \
 	powerstation-bin \
 	python-gbopyrator \
 	python-vdf \
-	rtl8812au-dkms-git \
-	rtl8814au-dkms-git \
-	rtl88x2bu-dkms-git \
-	rtl8821au-dkms-git \
 	ryzenadj-git \
 	steam_notif_daemon \
 	steam-powerbuttond-git \
@@ -238,6 +223,7 @@ export AUR_PACKAGES="\
 	zenergy-dkms-git \
 	lact-git \
 	coolercontrol \
+	corectrl \
 "
 
 export SERVICES="\
