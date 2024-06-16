@@ -223,7 +223,6 @@ export AUR_PACKAGES="\
 	zenergy-dkms-git \
 	lact-git \
 	coolercontrol \
-	corectrl \
 "
 
 export SERVICES="\

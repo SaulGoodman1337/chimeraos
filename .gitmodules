@@ -1,9 +1,6 @@
 [submodule "aur-pkgs/coolercontrol"]
 	path = aur-pkgs/coolercontrol
 	url = https://aur.archlinux.org/coolercontrol
-[submodule "aur-pkgs/corectrl-git"]
-	path = aur-pkgs/corectrl-git
-	url = https://aur.archlinux.org/corectrl-git
 [submodule "aur-pkgs/lact-git"]
 	path = aur-pkgs/lact-git
 	url = https://aur.archlinux.org/lact-git
