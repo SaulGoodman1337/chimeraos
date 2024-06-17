@@ -62,10 +62,6 @@ export PACKAGES="\
 	gzip \
 	haveged \
 	htop \
-	intel-gpu-tools \
-	intel-media-driver \
-	intel-ucode \
-	intel-undervolt \
 	less \
 	lm_sensors \
 	lib32-curl \
