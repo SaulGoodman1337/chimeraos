@@ -4,6 +4,3 @@
 [submodule "aur-pkgs/lact-git"]
 	path = aur-pkgs/lact-git
 	url = https://aur.archlinux.org/lact-git
-[submodule "aur-pkgs/it87-dkms-git"]
-	path = aur-pkgs/it87-dkms-git
-	url = https://aur.archlinux.org/it87-dkms-git

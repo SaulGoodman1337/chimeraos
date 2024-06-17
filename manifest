@@ -216,7 +216,6 @@ export AUR_PACKAGES="\
 	zenergy-dkms-git \
 	lact-git \
 	coolercontrol \
-	it87-dkms-git \
 "
 
 export SERVICES="\
