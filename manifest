@@ -197,7 +197,6 @@ export PACKAGE_OVERRIDES="\
 # Check on the AUR webpage if you are unsure
 export AUR_PACKAGES="\
 	antimicrox \
-	boxtron \
 	chimera \
 	chimeraos-device-quirks-git \
 	downgrade \
