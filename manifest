@@ -242,6 +242,7 @@ export SERVICES="\
 	swapfile \
 	lactd \
 	coolercontrold \
+	lm_sensors \
 "
 
 export USER_SERVICES="\
