@@ -55,7 +55,8 @@ fan2 = { speed_fixed = 100 }
 fan3 = { speed_fixed = 100 }
 
 [device-settings.fa49f4645cba12961942172e0455e53675b4adbc2ed077a740863e40266e9803]
-fan2 = { profile_uid = "9017aabc-5a7f-4d35-a992-b344e78ea259" }
+fan2 = { profile_uid = "b7c05a72-62ba-4d19-a114-ee26e161e9aa" }
+fan1 = { profile_uid = "5de6747c-7d54-4b8a-b789-03fd63336bf1" }
 
 
 # A list of profiles to be used with each device's settings
@@ -70,25 +71,33 @@ function = "0"
 uid = "0840dd7f-04cb-4c72-9303-4d78f0e92a55"
 name = "Case-CPU"
 p_type = "Graph"
-speed_profile = [[0.0, 20], [40.1, 20], [60.0, 25], [70.3, 35], [76.4, 42], [80.0, 50], [83.9, 60], [87.9, 72], [90.0, 80], [95.0, 100], [100.0, 100]]
+speed_profile = [[0.0, 20], [40.1, 20], [42.5, 21], [45.2, 22], [47.8, 22], [51.1, 23], [53.2, 24], [55.0, 24], [57.4, 26], [59.5, 26], [61.5, 27], [64.2, 29], [66.7, 31], [69.2, 33], [71.9, 35], [74.1, 39], [76.7, 42], [79.2, 47], [81.6, 54], [85.0, 60], [100.0, 100]]
 function_uid = "0"
 temp_source = { temp_name = "sensor1", device_uid = "19e098e312e1b1b39163a343ea22b6ea17f18ec1a803ffe0ce44f5bacd6076ee" }
 
 [[profiles]]
-uid = "cec6f31c-3ac3-44de-995e-3553f4783724"
-name = "Case-GPU"
+uid = "5de6747c-7d54-4b8a-b789-03fd63336bf1"
+name = "CPU"
 p_type = "Graph"
-speed_profile = [[0.0, 20], [40.1, 20], [54.4, 24], [62.2, 31], [68.7, 36], [74.9, 45], [80.1, 54], [85.1, 66], [89.2, 77], [95.0, 100], [100.0, 100]]
-temp_source = { temp_name = "sensor2", device_uid = "19e098e312e1b1b39163a343ea22b6ea17f18ec1a803ffe0ce44f5bacd6076ee" }
+speed_profile = [[0.0, 20], [55.0, 20], [59.4, 22], [62.1, 23], [64.3, 25], [66.4, 28], [68.2, 30], [70.1, 32], [71.9, 35], [73.5, 39], [75.5, 41], [77.2, 43], [79.3, 44], [81.1, 45], [83.0, 47], [85.1, 48], [87.3, 49], [90.1, 50], [91.2, 55], [92.4, 60], [100.0, 100]]
+temp_source = { temp_name = "sensor1", device_uid = "19e098e312e1b1b39163a343ea22b6ea17f18ec1a803ffe0ce44f5bacd6076ee" }
 function_uid = "0"
 
 [[profiles]]
-uid = "9017aabc-5a7f-4d35-a992-b344e78ea259"
-name = "Case-mix"
+uid = "f5f84648-72f9-4680-8197-dfd54565a1e6"
+name = "Case-GPU"
+p_type = "Graph"
+speed_profile = [[0.0, 20], [40.1, 20], [42.5, 21], [45.2, 22], [47.8, 22], [51.1, 23], [53.2, 24], [55.0, 24], [57.4, 26], [59.5, 26], [61.5, 27], [64.2, 29], [66.7, 31], [69.2, 33], [71.9, 35], [74.1, 39], [76.7, 42], [79.2, 47], [81.6, 54], [85.0, 60], [100.0, 100]]
+temp_source = { temp_name = "sensor1", device_uid = "19e098e312e1b1b39163a343ea22b6ea17f18ec1a803ffe0ce44f5bacd6076ee" }
+function_uid = "0"
+
+[[profiles]]
+uid = "b7c05a72-62ba-4d19-a114-ee26e161e9aa"
+name = "CASE-Mix"
 p_type = "Mix"
 speed_profile = []
 function_uid = "0"
-member_profile_uids = ["0840dd7f-04cb-4c72-9303-4d78f0e92a55", "cec6f31c-3ac3-44de-995e-3553f4783724"]
+member_profile_uids = ["0840dd7f-04cb-4c72-9303-4d78f0e92a55", "f5f84648-72f9-4680-8197-dfd54565a1e6"]
 mix_function_type = "Max"
 
 # A list of functions to be applied to the various profiles
