@@ -205,7 +205,6 @@ export AUR_PACKAGES="\
 	powerstation-bin \
 	python-gbopyrator \
 	python-vdf \
-	ryzenadj-git \
 	steam_notif_daemon \
 	steam-powerbuttond-git \
 	steam-removable-media-git \
