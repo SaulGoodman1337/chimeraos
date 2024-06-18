@@ -235,6 +235,7 @@ export SERVICES="\
 	lactd \
 	coolercontrold \
 	lm_sensors \
+	cpupower \
 "
 
 export USER_SERVICES="\
