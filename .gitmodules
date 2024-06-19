@@ -7,3 +7,6 @@
 [submodule "aur-pkgs/it87-dkms-git"]
 	path = aur-pkgs/it87-dkms-git
 	url = https://aur.archlinux.org/it87-dkms-git
+[submodule "aur-pkgs/amdgpu-clocks-git"]
+	path = aur-pkgs/amdgpu-clocks-git
+	url = https://aur.archlinux.org/amdgpu-clocks-git

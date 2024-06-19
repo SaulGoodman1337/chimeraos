@@ -188,6 +188,7 @@ export AUR_PACKAGES="\
 	lact-git \
 	coolercontrol \
 	it87-dkms-git \
+	amdgpu-clocks-git \
 "
 
 export SERVICES="\
@@ -210,6 +211,7 @@ export SERVICES="\
 	coolercontrold \
 	lm_sensors \
 	cpupower \
+	amdgpu-clocks \
 "
 
 export USER_SERVICES="\
