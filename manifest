@@ -102,7 +102,6 @@ export PACKAGES="\
 	noto-fonts-emoji \
 	nss-mdns \
 	openal \
-	openrazer-daemon \
 	openssh \
 	p7zip \
 	pipewire \
