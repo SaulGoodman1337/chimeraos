@@ -22,7 +22,6 @@ export PACKAGES="\
 	bash-completion \
 	bzip2 \
 	cifs-utils \
-	cpupower \
 	diffutils \
 	dkms \
 	distrobox \
@@ -210,7 +209,6 @@ export SERVICES="\
 	lactd \
 	coolercontrold \
 	lm_sensors \
-	cpupower \
 	amdgpu-clocks \
 "
 
