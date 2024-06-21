@@ -10,3 +10,6 @@
 [submodule "aur-pkgs/ryzen_smu-dkms-git"]
 	path = aur-pkgs/ryzen_smu-dkms-git
 	url = https://aur.archlinux.org/ryzen_smu-dkms-git
+[submodule "aur-pkgs/ryzen_monitor"]
+	path = aur-pkgs/ryzen_monitor
+	url = https://aur.archlinux.org/ryzen_monitor
