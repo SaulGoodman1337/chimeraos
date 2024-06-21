@@ -195,6 +195,7 @@ export AUR_PACKAGES="\
 	coolercontrol \
 	it87-dkms-git \
 	amdgpu-clocks-git \
+	ryzen_smu-dkms-git \
 "
 
 export SERVICES="\

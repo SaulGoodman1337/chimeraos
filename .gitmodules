@@ -7,3 +7,6 @@
 [submodule "aur-pkgs/amdgpu-clocks-git"]
 	path = aur-pkgs/amdgpu-clocks-git
 	url = https://aur.archlinux.org/amdgpu-clocks-git
+[submodule "aur-pkgs/ryzen_smu-dkms-git"]
+	path = aur-pkgs/ryzen_smu-dkms-git
+	url = https://aur.archlinux.org/ryzen_smu-dkms-git
