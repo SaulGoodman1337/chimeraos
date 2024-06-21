@@ -196,7 +196,7 @@ export AUR_PACKAGES="\
 	it87-dkms-git \
 	amdgpu-clocks-git \
 	ryzen_smu-dkms-git \
-	ryzen_monitor \
+	ryzen_monitor-git \
 "
 
 export SERVICES="\
