@@ -168,6 +168,7 @@ export PACKAGES="\
 	xorg-server \
 	xz \
 	zip \
+	lm_sensors \
 "
 
 export PACKAGE_OVERRIDES="\
@@ -234,6 +235,7 @@ export AUR_PACKAGES="\
 	wyvern \
 	xpadneo-dkms-git \
 	zenergy-dkms-git \
+	coolercontrol \
 "
 
 export SERVICES="\
@@ -254,6 +256,7 @@ export SERVICES="\
 	sshd \
 	systemd-timesyncd \
 	swapfile \
+	coolercontrold \
 "
 
 export USER_SERVICES="\

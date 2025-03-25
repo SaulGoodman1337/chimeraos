@@ -1,0 +1,3 @@
+[submodule "aur-pkgs/coolercontrol"]
+	path = aur-pkgs/coolercontrol
+	url = https://aur.archlinux.org/coolercontrol
