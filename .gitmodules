@@ -1,3 +1,6 @@
 [submodule "aur-pkgs/coolercontrol"]
 	path = aur-pkgs/coolercontrol
 	url = https://aur.archlinux.org/coolercontrol
+[submodule "aur-pkgs/it87-dkms-git"]
+	path = aur-pkgs/it87-dkms-git
+	url = https://aur.archlinux.org/it87-dkms-git
