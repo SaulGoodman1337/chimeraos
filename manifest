@@ -230,6 +230,7 @@ export AUR_PACKAGES="\
 	xpadneo-dkms-git \
 	zenergy-dkms-git \
 	coolercontrol \
+	it87-dkms-git \
 "
 
 export SERVICES="\
