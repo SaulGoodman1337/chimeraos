@@ -96,7 +96,6 @@ export PACKAGES="\
 	libretro-mgba \
 	libretro-mupen64plus-next \
 	libretro-nestopia \
-	libretro-pcsx2 \
 	libretro-picodrive \
 	libretro-ppsspp \
 	libretro-shaders-slang \
@@ -170,16 +169,17 @@ export PACKAGES="\
 export PACKAGE_OVERRIDES="\
 	https://github.com/ChimeraOS/linux-chimeraos/releases/download/v6.14.7-chos4-2/linux-chimeraos-6.14.7.chos4-2-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/linux-chimeraos/releases/download/v6.14.7-chos4-2/linux-chimeraos-headers-6.14.7.chos4-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.0-chos1-1/lib32-mesa-1--25.1.0.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.0-chos1-1/lib32-opencl-rusticl-mesa-1--25.1.0.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.0-chos1-1/lib32-vulkan-intel-1--25.1.0.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.0-chos1-1/lib32-vulkan-mesa-layers-1--25.1.0.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.0-chos1-1/lib32-vulkan-radeon-1--25.1.0.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.0-chos1-1/mesa-1--25.1.0.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.0-chos1-1/opencl-rusticl-mesa-1--25.1.0.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.0-chos1-1/vulkan-intel-1--25.1.0.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.0-chos1-1/vulkan-mesa-layers-1--25.1.0.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.0-chos1-1/vulkan-radeon-1--25.1.0.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.1-chos1-2/lib32-mesa-1--25.1.1.chos1-2-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.1-chos1-2/lib32-opencl-mesa-1--25.1.1.chos1-2-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.1-chos1-2/lib32-vulkan-intel-1--25.1.1.chos1-2-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.1-chos1-2/lib32-vulkan-mesa-layers-1--25.1.1.chos1-2-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.1-chos1-2/lib32-vulkan-radeon-1--25.1.1.chos1-2-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.1-chos1-2/mesa-1--25.1.1.chos1-2-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.1-chos1-2/opencl-mesa-1--25.1.1.chos1-2-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.1-chos1-2/vulkan-intel-1--25.1.1.chos1-2-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.1-chos1-2/vulkan-mesa-layers-1--25.1.1.chos1-2-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.1-chos1-2/vulkan-radeon-1--25.1.1.chos1-2-x86_64.pkg.tar.zst \
+	https://archive.archlinux.org/packages/l/libretro-ppsspp/libretro-ppsspp-42704-1-x86_64.pkg.tar.zst \
 "
 
 # Each entry is the clone url (https://aur.archlinux.org/{AUR_PACKAGE}.git)
@@ -203,8 +203,8 @@ export AUR_PACKAGES="\
 	hid-msi-claw-dkms-git \
 	legendary \
 	libretro-dosbox-pure-git \
+	libretro-lrps2-git \
 	libretro-opera-git \
-	libretro-pcsx2-launcher-git \
 	libretro-prosystem-git \
 	libretro-stella2014-git \
 	libretro-virtualjaguar-git \
