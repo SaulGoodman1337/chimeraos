@@ -1,17 +1,17 @@
 #! /bin/bash
 
-export VERSION="49-1"
+export VERSION="50"
 export SYSTEM_DESC="ChimeraOS"
 export SYSTEM_NAME="chimeraos"
 export USERNAME="gamer"
 export SIZE="12000MB"
-export ARCHIVE_DATE="2025/06/20"
+export ARCHIVE_DATE=$(date -d 'yesterday' +%Y/%m/%d)
 export WEBSITE="https://chimeraos.org"
 export DOCUMENTATION_URL="https://chimeraos.org/about"
 export BUG_REPORT_URL="https://github.com/ChimeraOS/chimeraos/issues"
 
-export KERNEL_PACKAGE="linux-chimeraos"
-export KERNEL_PACKAGE_ORIGIN="local"
+export KERNEL_PACKAGE="linux"
+export KERNEL_PACKAGE_ORIGIN="repo"
 
 export PACKAGES="\
 	accountsservice \
@@ -65,6 +65,7 @@ export PACKAGES="\
 	gzip \
 	htop \
 	intel-gpu-tools \
+	inputplumber \
 	intel-media-driver \
 	intel-ucode \
 	intel-undervolt \
@@ -82,8 +83,6 @@ export PACKAGES="\
 	lib32-sdl2 \
 	lib32-systemd \
 	lib32-vulkan-icd-loader \
-	libcurl-gnutls \
-	libidn11 \
 	libnfc \
 	libretro-beetle-pce-fast \
 	libretro-beetle-psx-hw \
@@ -99,7 +98,6 @@ export PACKAGES="\
 	libretro-nestopia \
 	libretro-picodrive \
 	libretro-ppsspp \
-	libretro-shaders-slang \
 	libretro-snes9x \
 	libxcrypt-compat \
 	libxss \
@@ -111,7 +109,6 @@ export PACKAGES="\
 	loupe \
 	lshw \
 	mangohud \
-	mesa-demos \
 	modemmanager \
 	nano \
 	nautilus \
@@ -167,23 +164,6 @@ export PACKAGES="\
 	lm_sensors \
 "
 
-export PACKAGE_OVERRIDES="\
-	https://github.com/ChimeraOS/linux-chimeraos/releases/download/v6.14.7-chos4-2/linux-chimeraos-6.14.7.chos4-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/linux-chimeraos/releases/download/v6.14.7-chos4-2/linux-chimeraos-headers-6.14.7.chos4-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.1-chos1-3/lib32-mesa-1--25.1.1.chos1-3-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.1-chos1-3/lib32-opencl-mesa-1--25.1.1.chos1-3-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.1-chos1-3/lib32-vulkan-intel-1--25.1.1.chos1-3-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.1-chos1-3/lib32-vulkan-mesa-layers-1--25.1.1.chos1-3-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.1-chos1-3/lib32-vulkan-radeon-1--25.1.1.chos1-3-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.1-chos1-3/mesa-1--25.1.1.chos1-3-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.1-chos1-3/opencl-mesa-1--25.1.1.chos1-3-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.1-chos1-3/vulkan-intel-1--25.1.1.chos1-3-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.1-chos1-3/vulkan-mesa-layers-1--25.1.1.chos1-3-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/25.1.1-chos1-3/vulkan-radeon-1--25.1.1.chos1-3-x86_64.pkg.tar.zst \
-	https://archive.archlinux.org/packages/l/libretro-ppsspp/libretro-ppsspp-42704-1-x86_64.pkg.tar.zst \
-	https://archive.archlinux.org/packages/i/inputplumber/inputplumber-0.60.7-1-x86_64.pkg.tar.zst \
-"
-
 # Each entry is the clone url (https://aur.archlinux.org/{AUR_PACKAGE}.git)
 # Which is often the same as the package name but it can be different.
 # Check on the AUR webpage if you are unsure
@@ -199,7 +179,6 @@ export AUR_PACKAGES="\
 	evdev-keepalive \
 	frzr \
 	gamescope-session-steam-git \
-	gamescope-session-steam-plus-git \
 	gpd-fan-driver-dkms-git \
 	hhfc-git \
 	hid-msi-claw-dkms-git \
@@ -213,8 +192,6 @@ export AUR_PACKAGES="\
 	linux-firmware-valve \
 	kanit-font \
 	nintendo-udev \
-	opengamepadui-bin \
-	opengamepadui-session-git \
 	pikaur \
 	powerstation-bin \
 	python-gbopyrator \
@@ -262,11 +239,14 @@ export USER_SERVICES="\
 
 export FILES_TO_DELETE="\
 	/boot/initramfs-linux-fallback.img \
+	/boot/initramfs-linux.img \
 	/usr/share/SFML \
 	/usr/share/doc \
 	/usr/share/gtk-doc \
 	/usr/share/help \
 	/usr/share/man \
+	/usr/share/nvidia/nvoptix.bin \
+	/usr/lib/libnvoptix.so* \
 "
 
 postinstallhook() {
