@@ -1,7 +1,8 @@
 name: Build ChimeraOS image
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  ARTIFACT_IMAGE_NAME: ${{ github.repository }}
+  BUILDER_IMAGE_NAME: ${{ github.repository_owner }}/builder
 
 on:
   workflow_call:
@@ -16,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      packages: write
     outputs:
       version: ${{ steps.build_image.outputs.version }}
       display_name: ${{ steps.build_image.outputs.display_name }}
@@ -33,12 +35,14 @@ jobs:
           sudo rm -rf /opt/hostedtoolcache
           sudo rm -rf /opt/az
           df -h
-      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: sudo snap install oras --classic
+      - uses: actions/checkout@v6
       - name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          images: ${{ env.REGISTRY }}/${{ env.BUILDER_IMAGE_NAME }}
       - uses: actions/download-artifact@v4
         with:
             pattern: AUR-packages*
@@ -55,6 +59,15 @@ jobs:
           docker pull ${{ steps.meta.outputs.tags }}
           docker run -u root --rm --entrypoint=/workdir/build-image.sh -v $(pwd):/workdir -v $(pwd)/output:/output -v $GITHUB_OUTPUT:$GITHUB_OUTPUT -e "GITHUB_OUTPUT=$GITHUB_OUTPUT" --privileged=true ${{ steps.meta.outputs.tags }} $(echo ${GITHUB_SHA} | cut -c1-7)
           echo -e "$(docker inspect --format='{{index .RepoDigests 0}}' ${{ steps.meta.outputs.tags }})" > output/container.txt
+      - name: Upload system image artifact
+        id: upload_system_image_artifact
+        env:
+          ARTIFACT_IMAGE_NAME: ${{ env.ARTIFACT_IMAGE_NAME }}
+        run: |
+            cd output
+            oras login --username ${{ github.actor }} --password ${{ secrets.GITHUB_TOKEN }} ${{ env.REGISTRY }}
+            oras push ${{ env.REGISTRY }}/${ARTIFACT_IMAGE_NAME,,}:${{ steps.build_image.outputs.version }} ${{ steps.build_image.outputs.image_filename }}
+            oras tag  ${{ env.REGISTRY }}/${ARTIFACT_IMAGE_NAME,,}:${{ steps.build_image.outputs.version }} unstable
       - name: Create release
         id: create_release
         uses: softprops/action-gh-release@v2
@@ -67,7 +80,6 @@ jobs:
           prerelease: true
           fail_on_unmatched_files: true
           files: |
-            output/${{ steps.build_image.outputs.image_filename }}
             output/build_info.txt
             output/sha256sum.txt
             output/container.txt

@@ -71,6 +71,11 @@ if [ -n "${PACKAGE_OVERRIDES}" ]; then
 	wget --directory-prefix=${BUILD_PATH}/override_pkgs ${PACKAGE_OVERRIDES}
 fi
 
+# download kernel packages from oci container if required
+if [ "$KERNEL_PACKAGE_ORIGIN" != "local" ] && [ "$KERNEL_PACKAGE_ORIGIN" != "repo" ] ; then
+	oras pull "${KERNEL_PACKAGE_ORIGIN}" --output ${BUILD_PATH}/override_pkgs
+	rm -f ${BUILD_PATH}/override_pkgs/${KERNEL_PACKAGE}-docs*.pkg.tar.zst
+fi
 
 # chroot into target
 mount --bind ${BUILD_PATH} ${BUILD_PATH}
@@ -99,11 +104,11 @@ sed -i '/BUILDENV/s/ check/ !check/g' /etc/makepkg.conf
 sed -i '/OPTIONS/s/ debug/ !debug/g' /etc/makepkg.conf
 
 # install kernel package
-if [ "$KERNEL_PACKAGE_ORIGIN" == "local" ] ; then
-	pacman --noconfirm -U --overwrite '*' \
-	/override_pkgs/${KERNEL_PACKAGE}-*.pkg.tar.zst
-else
+if [ "$KERNEL_PACKAGE_ORIGIN" == "repo" ] ; then
 	pacman --noconfirm -S "${KERNEL_PACKAGE}" "${KERNEL_PACKAGE}-headers"
+else
+	pacman --noconfirm -U --overwrite '*' /override_pkgs/${KERNEL_PACKAGE}-*.pkg.tar.zst
+	rm -f /override_pkgs/${KERNEL_PACKAGE}-*.pkg.tar.zst
 fi
 
 # install local packages

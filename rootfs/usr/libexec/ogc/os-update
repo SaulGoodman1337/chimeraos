@@ -1,0 +1,7 @@
+#! /bin/bash
+
+if [ "$1" == "check" ]; then
+	frzr-deploy --check
+elif [ "$1" == "update" ]; then
+	frzr-deploy --steam-progress
+fi

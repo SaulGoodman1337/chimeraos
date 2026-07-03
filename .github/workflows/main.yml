@@ -2,7 +2,7 @@ name: System image build
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  BUILDER_IMAGE_NAME: ${{ github.repository_owner }}/builder
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
       aur-pkgs: ${{ steps.set-aur-pkgs.outputs.matrix }}
       pkgs: ${{ steps.set-pkgs.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - id: set-aur-pkgs
         run: source ./manifest ; echo "matrix=$(echo ${AUR_PACKAGES} | jq -R -s -c 'split(" ")')" >> $GITHUB_OUTPUT
         shell: bash
@@ -41,12 +41,12 @@ jobs:
       matrix:
         package: ${{ fromJson(needs.list-pkgbuilds.outputs.aur-pkgs) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          images: ${{ env.REGISTRY }}/${{ env.BUILDER_IMAGE_NAME }}
       - name: Build packages
         run: |
           docker pull ${{ steps.meta.outputs.tags }}
@@ -68,12 +68,12 @@ jobs:
       matrix:
         package: ${{ fromJson(needs.list-pkgbuilds.outputs.pkgs) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          images: ${{ env.REGISTRY }}/${{ env.BUILDER_IMAGE_NAME }}
       - name: Build packages
         run: |
           docker pull ${{ steps.meta.outputs.tags }}

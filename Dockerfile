@@ -21,14 +21,22 @@ RUN echo -e "keyserver-options auto-key-retrieve" >> /etc/pacman.d/gnupg/gpg.con
   python-markdown-it-py \
   python-setuptools \
   python-wheel \
+  go \
   sudo \
   && \
   pacman --noconfirm -S --needed git && \
   echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
-  useradd build -G wheel -m && \
+  useradd build -G wheel -m \
+  && \
   su - build -c "git clone https://aur.archlinux.org/pikaur.git /tmp/pikaur" && \
   su - build -c "cd /tmp/pikaur && makepkg -f" && \
-  pacman --noconfirm -U /tmp/pikaur/pikaur-*.pkg.tar.zst
+  pacman --noconfirm -U /tmp/pikaur/pikaur-*.pkg.tar.zst \
+  && \
+  su - build -c "git clone https://aur.archlinux.org/oras.git /tmp/oras" && \
+  su - build -c "cd /tmp/oras && makepkg -f" && \
+  pacman --noconfirm -U /tmp/oras/oras-*.pkg.tar.zst \
+  && \
+  pacman --noconfirm -Rdd go || true
 
 # Auto add PGP keys for users
 RUN mkdir -p /etc/gnupg/ && echo -e "keyserver-options auto-key-retrieve" >> /etc/gnupg/gpg.conf
@@ -48,10 +56,13 @@ RUN source /manifest && \
   echo "Server=https://archive.archlinux.org/repos/${ARCHIVE_DATE}/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist && \
   pacman --noconfirm -Syyuu; if [ -n "${PACKAGE_OVERRIDES}" ]; then wget --directory-prefix=/tmp/extra_pkgs ${PACKAGE_OVERRIDES}; pacman --noconfirm -U --overwrite '*' /tmp/extra_pkgs/*; rm -rf /tmp/extra_pkgs; fi
 
+# workaround for failing python-pyglet build required by chimera package
+RUN pacman --noconfirm -U https://archive.archlinux.org/packages/p/python-flit-core/python-flit-core-3.12.0-4-any.pkg.tar.zst
+
 USER build
-ENV BUILD_USER "build"
-ENV GNUPGHOME  "/etc/pacman.d/gnupg"
+ENV BUILD_USER="build"
+ENV GNUPGHOME="/etc/pacman.d/gnupg"
 # Built image will be moved here. This should be a host mount to get the output.
-ENV OUTPUT_DIR /output
+ENV OUTPUT_DIR="/output"
 
 WORKDIR /workdir
